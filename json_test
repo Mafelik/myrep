@@ -1,0 +1,10 @@
+import requests, array
+message = requests.get('http://etp.bashzakaz.ru/searchServlet?query={"title":"счетчик",+"types":["BUYING"]}&filter={"state":["GD","CURRENT"]}&sort={"placementDate":false}&limit={"min":0,+"max":20,+"updateTotalCount":true}')
+reason = message.json()['list']
+mylist =[]
+i = 0
+rea = str(reason).split(', ')
+while i <= len(rea) -1:
+    mylist.append(rea[i])
+    i= i+1
+print(mylist[8])
